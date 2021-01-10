@@ -1,0 +1,64 @@
+body {
+    background:black;
+}
+canvas {
+    border:1px solid black;
+    display:none;
+}
+#left {
+    width:40%;
+    height:100%;
+    position:absolute;
+    left:0%;
+    top:0%;
+    opacity:0;
+    z-index:3;
+}
+#right {
+    width:40%;
+    height:100%;
+    position:absolute;
+    left:50%;
+    top:0%;
+    opacity:0;
+    z-index:3;
+}
+#loading {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+h1 {
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,-200%);
+    font-weight:bolder;
+    font-family:Courier;
+    color:white;
+}
+#bg {
+    position:absolute;
+    top:60%;
+    left:50%;
+    transform:translate(-50%,0%);
+    width:200px;
+    height:20px;
+    background:white;
+    z-index:2;
+    border-radius:40px;
+}
+#val {
+    background:green;
+    z-index:3;
+    height:20px;
+    border-radius:40px;
+    animation-name:val;
+    animation-iteration-count:infinite;
+    animation-duration:3s;
+    animation-timing-function:ease-in-out;
+}
+@keyframes val {
+    0%{ width:0px;}
+    100%{ width:200px;}
+}
