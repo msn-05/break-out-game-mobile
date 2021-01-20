@@ -1,5 +1,6 @@
 function startGame(){
-    alert("This game was made in Sololearn by MSN(Mohammad Saadman Nuheen)\ntap on the left and right side of the screen to move the paddle!\nTap and hold to make the paddle move faster.");
+    alert("This game was made in Sololearn by MSN(Mohammad Saadman Nuheen).");
+    alert("tap on the left and right side of the screen to move the paddle!\nTap and hold to make the paddle move faster.");
     var c = document.getElementById("c");
     var ctx = c.getContext("2d");
     var scrW = window.innerWidth-10 , scrH = window.innerHeight;
@@ -7,15 +8,15 @@ function startGame(){
     c.height = scrH - 50;
     var w=c.width, h=c.height;
     var score = 0;
-    var bx = w/2,by = h/2+30,bdx = 0.8,bdy = -0.8;
+    var bx = w/2,by = h/2+30,bdx = 1.5,bdy = -1.5;
     var diff = prompt("Difficulty?\n(1)Easy\n(2)Normal\n(3)Hard","2");
     if (diff == 1){
-        bdx = .5;
-        bdy = -.5;
-    }
-    else if (diff == 3){
         bdx = 1;
         bdy = -1;
+    }
+    else if (diff == 3){
+        bdx = 2;
+        bdy = -2;
     }
     var radius = 5;
     var lives = 5;
@@ -118,8 +119,8 @@ function startGame(){
             bx = w/2;
             by = h/2+30;
             px = (w-60)/2;
-            bdy = -.8;
-            bdx = .8;
+            bdy = -1.5;
+            bdx = 1.5;
            }
        }
     }
@@ -138,8 +139,8 @@ function startGame(){
              }
          }
          b.status = 0;
-         score += lives;
-         if(score == brickRowCount*brickColumnCount * lives){
+         score++;
+         if(score == brickRowCount*brickColumnCount){
           alert("You won!\nScore:" + score);
           document.location.reload();
           clearInterval(interval);
